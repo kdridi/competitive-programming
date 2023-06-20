@@ -72,14 +72,16 @@ namespace competitive {
 				std::chrono::nanoseconds m_timeOut;
 				bool m_started;
 			};
-
-			inline std::ostream& operator<<(std::ostream &os, const Timer& timer)
-			{
-				os << "Time taken: " << timer.currentTimeTakenInNanoSeconds().count() << "ns";
-				return os;
-			}
 		}
 	}
+}
+
+#include <ostream>
+
+inline std::ostream& operator<<(std::ostream &os, const competitive::programming::timemanagement::Timer& timer)
+{
+	os << "Time taken: " << timer.currentTimeTakenInNanoSeconds().count() << "ns";
+	return os;
 }
 
 #endif
